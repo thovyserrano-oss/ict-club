@@ -55,10 +55,11 @@ export default function Projects() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {placeholderProjects.map((project) => (
+          {placeholderProjects.map((project, i) => (
             <article
               key={project.title}
-              className="group flex flex-col rounded-xl border border-[var(--border)] p-6 transition-colors hover:border-[var(--foreground)]"
+              className="animate-fade-up group flex flex-col rounded-xl border border-[var(--border)] p-6 transition-all hover:-translate-y-1 hover:border-[var(--foreground)]"
+              style={{ animationDelay: `${(i + 1) * 0.1}s` }}
             >
               <div className="mb-2 h-2 w-12 rounded-full bg-[var(--foreground)]" />
               <h3 className="mt-4 text-lg font-semibold">{project.title}</h3>
